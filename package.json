@@ -2,6 +2,9 @@
   "name": "evohome",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.18.2"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "latest",

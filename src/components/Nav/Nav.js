@@ -37,7 +37,7 @@ const Nav = () => {
   const bgColor = useColorModeValue('gray.100', 'gray.900');
 
   return (
-    <Box bg={'#251E2B'} px={4}>
+    <Box bg={'#251E2B'} px={4} maxWidth="1400px" marginLeft="auto" marginRight="auto" mt={2}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         {/*<IconButton
             size={'md'}

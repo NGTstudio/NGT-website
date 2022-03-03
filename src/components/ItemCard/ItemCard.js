@@ -11,7 +11,7 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
   
-  const ItemCard = ({emoji, title, description}) => {
+  const ItemCard = ({emoji, title, description, height, mobileHeight}) => {
     return (
       <Center py={6}>
         <Box
@@ -21,7 +21,9 @@ import {
           boxShadow={'2xl'}
           rounded={'lg'}
           p={6}
-          textAlign={'center'}>
+          textAlign={'center'}
+          height={{base: mobileHeight, sm: height}}
+          >
           <Heading size="2xl">
               {emoji}
           </Heading>

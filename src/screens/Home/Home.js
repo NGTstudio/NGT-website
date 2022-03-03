@@ -108,11 +108,11 @@ const Home = () => {
         <Heading size="xl" pt={6} textAlign="center">
           Fair finance for everyone
         </Heading>
-        <Text px={{ base: 10, md: 60 }} textAlign="center" opacity={0.66}>
+        <Text px={{ base: 10, md: 60 }} textAlign="center" opacity={0.66} maxW="1200px" marginLeft="auto" marginRight="auto">
           EvoVerses DAO is owned and controlled by our community of 🌀 token
           holders.
         </Text>
-        <Text px={{ base: 10, md: 60 }} textAlign="center" opacity={0.66}>
+        <Text px={{ base: 10, md: 60 }} textAlign="center" opacity={0.66} maxW="1200px" marginLeft="auto" marginRight="auto">
           Yes, we are a DAO with community votes and multisig wallet, as every
           project should be!
         </Text>
@@ -140,16 +140,16 @@ const Home = () => {
       >
         <Heading size="lg" textAlign="center" px={{ base: 10 }}>
           1. Our Decentralized Game-Exchange: 🌀{' '}
-          <p style={{ color: 'rgb(222, 150, 26)' }}>EvoDEX</p>
+          <span style={{ color: 'rgb(222, 150, 26)' }}>EvoDEX</span>
         </Heading>
-        <Text px={{ base: 20, md: 60 }} textAlign="center" opacity={0.66}>
+        <Text px={{ base: 20, md: 80 }} mt="8px" textAlign="center" opacity={0.66} maxW="1200px" marginLeft="auto" marginRight="auto">
           A Pokemon-like game, but with its own Exchange, with community
           governance and multisig wallet
         </Text>
         <Flex columnGap={6} flexWrap="wrap" justifyContent="center" alignItems="center" px={4}>
-            <ItemCard emoji="🏛️" title="Secure" description="Forked from UniSwap code, audited by the most popular companies"/>
-            <ItemCard emoji="💸" title="Fun and Original" description="A real game but with a complete DeFi integration, your in-game assets now are useful in your real life!"/>
-            <ItemCard emoji="🗣️" title="Decentralized Governance" description="🌀 holders decide EvoVerses DAO's future via on-chain voting."/>
+            <ItemCard height={220} mobileHeight={240} emoji="🏛️" title="Secure" description="Forked from UniSwap code, audited by the most popular companies"/>
+            <ItemCard height={240} mobileHeight={240} emoji="💸" title="Fun and Original" description="A real game but with a complete DeFi integration, your in-game assets now are useful in your real life!"/>
+            <ItemCard height={220} mobileHeight={240} emoji="🗣️" title="Decentralized Governance" description="🌀 holders decide EvoVerses DAO's future via on-chain voting."/>
         </Flex>
       </Stack>
       <Stack
@@ -160,16 +160,16 @@ const Home = () => {
       >
         <Heading size="lg" textAlign="center" px={{ base: 10 }}>
           2. Our Play-to-Earn Pokemon-like Game: 🦄{' '}
-          <p style={{ color: 'rgb(222, 150, 26)' }}>EvoVerses</p>
+          <span style={{ color: 'rgb(222, 150, 26)' }}>EvoVerses</span>
         </Heading>
-        <Text px={{ base: 20, md: 60 }} textAlign="center" opacity={0.66}>
+        <Text px={{ base: 20, md: 60 }} pt="8px" textAlign="center" opacity={0.66} maxW="1200px" marginLeft="auto" marginRight="auto">
           Note: This one will launch after the EvoDEX. Check our Discord for the
           latest updates!
         </Text>
         <Box width="100%" px={4} pt={4}>
         <ReactPlayer className='react-player' url="https://www.youtube.com/watch?v=tw7QJRhkwRs" height='auto' controls={false} muted={true} loop={true} playing={true} />
         </Box>
-        <Text px={{ base: 20, md: 60 }} textAlign="center" fontSize="sm" opacity={0.66} fontStyle="italic" pt={2}>
+        <Text px={{ base: 20, md: 60 }} textAlign="center" fontSize="sm" opacity={0.66} fontStyle="italic" pt={2} maxW="1000px" marginLeft="auto" marginRight="auto">
         A little sneak peak of what is coming to EvoVerses, if you want more... you know, come to pur Telegram Channel 😏
         </Text>
       </Stack>
@@ -183,7 +183,7 @@ const Home = () => {
         <Heading size="lg" textAlign="center" px={{ base: 10 }}>
          And much more to come!
         </Heading>
-        <Text px={{ base: 20, md: 60 }} textAlign="center" opacity={0.66} fontSize="sm" fontStyle="italic" pt={2}>
+        <Text px={{ base: 20, md: 60 }} textAlign="center" opacity={0.66} fontSize="md" fontStyle="italic" pt={2}>
         And the best part? Every service is connected to each other, building a huge and profitable ecosystem!
         </Text>
         <Heading size="lg" pt={6} pb={2}>Are you ready?</Heading>

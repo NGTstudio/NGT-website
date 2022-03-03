@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "EvoVerses",
+  "name": "EvoVerses DAO: DeFi 2.0 + Crypto Game to grow your crypto assets",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#DE961A",
+  "background_color": "#221C44"
 }

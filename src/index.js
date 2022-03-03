@@ -4,10 +4,20 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import '@fontsource/nunito/200.css';
+import '@fontsource/nunito/300.css';
+import '@fontsource/nunito/400.css';
+import '@fontsource/nunito/500.css';
+import '@fontsource/nunito/600.css';
+import '@fontsource/nunito/700.css';
+import '@fontsource/nunito/800.css';
+import '@fontsource/nunito/900.css';
+
+import theme from './themes/Default/Default';
 
 ReactDOM.render(
   <StrictMode>
-    <ColorModeScript />
+    <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
     <App />
   </StrictMode>,
   document.getElementById('root')

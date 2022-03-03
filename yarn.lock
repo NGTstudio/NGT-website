@@ -1747,6 +1747,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chakra-ui/icons@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "@chakra-ui/icons@npm:1.1.7"
+  dependencies:
+    "@chakra-ui/icon": 2.0.5
+    "@types/react": ^17.0.15
+  peerDependencies:
+    "@chakra-ui/system": ">=1.0.0"
+    react: ">=16.8.6"
+  checksum: c76dd4f7c9cf2eeecfdf82fc373c5eed27a51db5e52e5b360eeacb1660e1869d6f20fbb754c53f5e47ca8b37d80a0c8b60c188dce3ef976e8ba1fbb14e34d4c7
+  languageName: node
+  linkType: hard
+
 "@chakra-ui/image@npm:1.1.8":
   version: 1.1.8
   resolution: "@chakra-ui/image@npm:1.1.8"
@@ -2606,6 +2619,13 @@ __metadata:
     minimatch: ^3.0.4
     strip-json-comments: ^3.1.1
   checksum: a5e51dcf02627363567094456d7880b46b6a14a285d7a057f083ca903bdd862483bb6314cbc9fb6fa2d2c4537d50e0d28bd5e39650840241ae4796faaec65d2e
+  languageName: node
+  linkType: hard
+
+"@fontsource/nunito@npm:^4.5.4":
+  version: 4.5.4
+  resolution: "@fontsource/nunito@npm:4.5.4"
+  checksum: efb821ce223e2ea82d2020513aec6b285759db07680161c8efb01b100e65c9c148d628c6c4662c67251dd21d954cb07108b08c633d511a65f560f1a26d048970
   languageName: node
   linkType: hard
 
@@ -3602,6 +3622,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prop-types@npm:*":
+  version: 15.7.4
+  resolution: "@types/prop-types@npm:15.7.4"
+  checksum: ef6e1899e59b876c273811b1bd845022fc66d5a3d11cb38a25b6c566b30514ae38fe20a40f67622f362a4f4f7f9224e22d8da101cff3d6e97e11d7b4c307cfc1
+  languageName: node
+  linkType: hard
+
 "@types/q@npm:^1.5.1":
   version: 1.5.5
   resolution: "@types/q@npm:1.5.5"
@@ -3623,6 +3650,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react@npm:^17.0.15":
+  version: 17.0.39
+  resolution: "@types/react@npm:17.0.39"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: bf04d3c2894559012710d595553e12b422d3b91cd8f4f7e122d8cb044ba9c2ba17f6e8a4e09581359cc5509ddc59cd8c8fabd6774f3505a40a45393f074d6e6e
+  languageName: node
+  linkType: hard
+
 "@types/resolve@npm:1.17.1":
   version: 1.17.1
   resolution: "@types/resolve@npm:1.17.1"
@@ -3636,6 +3674,13 @@ __metadata:
   version: 0.12.1
   resolution: "@types/retry@npm:0.12.1"
   checksum: 5f46b2556053655f78262bb33040dc58417c900457cc63ff37d6c35349814471453ef511af0cec76a540c601296cd2b22f64bab1ab649c0dacc0223765ba876c
+  languageName: node
+  linkType: hard
+
+"@types/scheduler@npm:*":
+  version: 0.16.2
+  resolution: "@types/scheduler@npm:0.16.2"
+  checksum: b6b4dcfeae6deba2e06a70941860fb1435730576d3689225a421280b7742318d1548b3d22c1f66ab68e414f346a9542f29240bc955b6332c5b11e561077583bc
   languageName: node
   linkType: hard
 
@@ -5797,7 +5842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:^4.2.2":
+"deepmerge@npm:^4.0.0, deepmerge@npm:^4.2.2":
   version: 4.2.2
   resolution: "deepmerge@npm:4.2.2"
   checksum: a8c43a1ed8d6d1ed2b5bf569fa4c8eb9f0924034baf75d5d406e47e157a451075c4db353efea7b6bcc56ec48116a8ce72fccf867b6e078e7c561904b5897530b
@@ -6702,17 +6747,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "evohome@workspace:."
   dependencies:
+    "@chakra-ui/icons": ^1.1.7
     "@chakra-ui/react": latest
     "@emotion/react": ^11.0.0
     "@emotion/styled": ^11.0.0
+    "@fontsource/nunito": ^4.5.4
     "@testing-library/jest-dom": ^5.9.0
     "@testing-library/react": ^10.2.1
     "@testing-library/user-event": ^12.0.2
     framer-motion: ^4.0.0
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-ga4: ^1.4.1
     react-icons: ^3.0.0
+    react-player: ^2.9.0
     react-scripts: 5.0.0
+    react-tooltip: ^4.2.21
     web-vitals: ^0.2.2
   languageName: unknown
   linkType: soft
@@ -8960,6 +9010,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"load-script@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "load-script@npm:1.0.0"
+  checksum: 8458e3f07b4a86f8d9d66e47a987811491a5d013af23ba7b371c6d3c9dc899885b072ccf65abf7874c10cb197d4975eacd8a7a125bfb38dbbcb267539f5dc1e9
+  languageName: node
+  linkType: hard
+
 "loader-runner@npm:^4.2.0":
   version: 4.2.0
   resolution: "loader-runner@npm:4.2.0"
@@ -9206,6 +9263,13 @@ __metadata:
   dependencies:
     fs-monkey: 1.0.3
   checksum: 6d2f49d447d1be24ff9c747618933784eeb059189bc6a0d77b7a51c7daf06e2d3a74674a2e2ff1520e2c312bf91e719ed37144cf05087379b3ba0aef0b6aa062
+  languageName: node
+  linkType: hard
+
+"memoize-one@npm:^5.1.1":
+  version: 5.2.1
+  resolution: "memoize-one@npm:5.2.1"
+  checksum: a3cba7b824ebcf24cdfcd234aa7f86f3ad6394b8d9be4c96ff756dafb8b51c7f71320785fbc2304f1af48a0467cbbd2a409efc9333025700ed523f254cb52e3d
   languageName: node
   linkType: hard
 
@@ -11158,7 +11222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:3.2.0":
+"react-fast-compare@npm:3.2.0, react-fast-compare@npm:^3.0.1":
   version: 3.2.0
   resolution: "react-fast-compare@npm:3.2.0"
   checksum: 8ef272c825ae329f61633ce4ce7f15aa5b84e5214d88bc0823880236e03e985a13195befa2c7a4eda7db3b017dc7985729152d88445823f652403cf36c2b86aa
@@ -11178,6 +11242,13 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0
   checksum: 520b12a4496be21b3228bbf938657f6c33f868e486a0cd355d8bec918129d2c1bf7aabecb20aecdb446a1fbdb61b16f680b5d15b998f544f1b5c0dc5c8914c40
+  languageName: node
+  linkType: hard
+
+"react-ga4@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "react-ga4@npm:1.4.1"
+  checksum: 4c33ecb47dfc26c241a6af8e2b08b29b6c059f40e456e93d1c2b65c995edce18f32d9777295774ec992d968d7c5efdd105eb62398972d85ff2e2b6dad8646a26
   languageName: node
   linkType: hard
 
@@ -11203,6 +11274,21 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-player@npm:^2.9.0":
+  version: 2.9.0
+  resolution: "react-player@npm:2.9.0"
+  dependencies:
+    deepmerge: ^4.0.0
+    load-script: ^1.0.0
+    memoize-one: ^5.1.1
+    prop-types: ^15.7.2
+    react-fast-compare: ^3.0.1
+  peerDependencies:
+    react: ">=16.6.0"
+  checksum: 928fc38c36b713a1a2cc5ab972b1971181e407ab942dcdb0c8759e69f6d593fc15d413ab2ffaea2dfe4ecec106531ad7db02b4d996060d670fba68c75c262e1b
   languageName: node
   linkType: hard
 
@@ -11329,6 +11415,19 @@ __metadata:
     "@types/react":
       optional: true
   checksum: d44524158c403658132c33bcbe2c274fc919981fbe05a5205033a6adf3d1a1c3d07433d519213285dd581a932f9e2c66bd8b4511af40ec02a39ac4d426e146d4
+  languageName: node
+  linkType: hard
+
+"react-tooltip@npm:^4.2.21":
+  version: 4.2.21
+  resolution: "react-tooltip@npm:4.2.21"
+  dependencies:
+    prop-types: ^15.7.2
+    uuid: ^7.0.3
+  peerDependencies:
+    react: ">=16.0.0"
+    react-dom: ">=16.0.0"
+  checksum: dd145ae90768a8af5518672bfd91b985a57ff021b50a60044caedd872b457ea5134793cf8d5426bd45587fa6f722320936009f5c6533a4f94d665c0a23589222
   languageName: node
   linkType: hard
 
@@ -13024,6 +13123,15 @@ __metadata:
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: c81095493225ecfc28add49c106ca4f09cdf56bc66731aa8dabc2edbbccb1e1bfe2de6a115e5c6a380d3ea166d1636410b62ef216bb07b3feb1cfde1d95d5080
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "uuid@npm:7.0.3"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: f5b7b5cc28accac68d5c083fd51cca64896639ebd4cca88c6cfb363801aaa83aa439c86dfc8446ea250a7a98d17afd2ad9e88d9d4958c79a412eccb93bae29de
   languageName: node
   linkType: hard
 

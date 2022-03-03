@@ -20,6 +20,11 @@ const Home = () => {
   const toast = useToast();
 
   const onClickOpenApp = () => {
+    ReactGA.event({
+        category: "conversion",
+        action: "not_yet_app",
+        label: "hero"
+      });
     toast({
       title: `🦄 Soon!`,
       description:
@@ -44,6 +49,9 @@ const Home = () => {
           size="lg"
           textAlign="center"
           px={{ base: 10, md: 60 }}
+          maxW="1200px"
+          marginLeft="auto"
+          marginRight="auto"
           lineHeight={1.6}
         >
           EvoVerses is a crosschain DeFi game. We will be available at the
@@ -77,6 +85,13 @@ const Home = () => {
               borderRadius={20}
               px={5}
               color="white"
+              onClick={()=>{
+                ReactGA.event({
+                  category: "conversion",
+                  action: "open_discord",
+                  label: "hero"
+                });
+              }}
             >
               Join 🌀 Discord
             </Button>
@@ -180,6 +195,13 @@ const Home = () => {
               borderRadius={20}
               px={5}
               color="white"
+              onClick={()=>{
+                ReactGA.event({
+                  category: "conversion",
+                  action: "open_discord",
+                  label: "bottom_cta"
+                });
+              }}
             >
               Join 🌀 Discord
             </Button>

@@ -26,6 +26,7 @@ import {
 } from '@chakra-ui/icons';
 
 import NavLink from '../NavLink/NavLink';
+import ReactGA from "react-ga4";
 
 const Links = [];
 
@@ -66,6 +67,13 @@ const Nav = () => {
               borderRadius={20}
               px={5}
               color="white"
+              onClick={()=>{
+                ReactGA.event({
+                  category: "conversion",
+                  action: "open_discord",
+                  label: "top_bar"
+                });
+              }}
             >
               Join 🌀 Discord
             </Button>

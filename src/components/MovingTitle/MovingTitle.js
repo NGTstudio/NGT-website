@@ -15,7 +15,7 @@ const MovingTitle = () => {
         return () => {
             if(_tmp) clearInterval(_tmp);
         }
-    }, [setCurrentEmoji])
+    }, [])
     return (
         <Stack pt={14} pb={6} justifyContent="center" alignItems="center" flexDir="column">
             <Heading size="4xl" as="h2" textAlign="center">{EMOJIS[currentEmoji]}</Heading>

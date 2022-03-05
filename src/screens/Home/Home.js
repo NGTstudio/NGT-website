@@ -170,7 +170,7 @@ const Home = () => {
         <ReactPlayer className='react-player' url="https://www.youtube.com/watch?v=tw7QJRhkwRs" height='auto' controls={false} muted={true} loop={true} playing={true} />
         </Box>
         <Text px={{ base: 20, md: 60 }} textAlign="center" fontSize="sm" opacity={0.66} fontStyle="italic" pt={2} maxW="1000px" marginLeft="auto" marginRight="auto">
-        A little sneak peak of what is coming to EvoVerses, if you want more... you know, come to pur Telegram Channel 😏
+        A little sneak peak of what is coming to EvoVerses, if you want more... you know, come to our Telegram Channel 😏
         </Text>
       </Stack>
       <Stack

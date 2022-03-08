@@ -1,6 +1,14 @@
 import { Link, useColorModeValue } from '@chakra-ui/react';
-const NavLink = ({ children }) => {
+import ReactGA from 'react-ga4';
+
+const NavLink = ({ children, href, analyticsEvent }) => {
   const bgColor = useColorModeValue('gray.200', 'gray.700');
+
+  const _onClick = () => {
+    if(analyticsEvent) {
+      ReactGA.event(analyticsEvent);
+    }
+  }
 
   return (
     <Link
@@ -11,7 +19,8 @@ const NavLink = ({ children }) => {
         textDecoration: 'none',
         bg: bgColor,
       }}
-      href={'#'}
+      href={href || "#"}
+      onClick={_onClick}
     >
       {children}
     </Link>

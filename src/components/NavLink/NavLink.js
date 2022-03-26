@@ -1,4 +1,5 @@
 import { Link, useColorModeValue } from '@chakra-ui/react';
+import { Link as LinkNext } from "next/link";
 import ReactGA from 'react-ga4';
 
 const NavLink = ({ children, href, analyticsEvent }) => {
@@ -12,6 +13,7 @@ const NavLink = ({ children, href, analyticsEvent }) => {
 
   return (
     <Link
+     as={LinkNext}
       px={2}
       py={1}
       rounded={'md'}

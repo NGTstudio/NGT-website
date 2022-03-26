@@ -16,6 +16,7 @@ import ReactPlayer from "react-player/lazy";
 import Nav from '../../components/Nav/Nav';
 import MovingTitle from '../../components/MovingTitle/MovingTitle';
 import ItemCard from '../../components/ItemCard/ItemCard';
+import { Link as LinkNext } from "next/link";
 const Home = () => {
   const toast = useToast();
 
@@ -77,7 +78,7 @@ const Home = () => {
           >
             Open App
           </Button>
-          <Link href='https://discord.gg/evoverses' _hover={{textDecoration: "none"}}>
+          <Link as={LinkNext} href='https://discord.gg/evoverses' _hover={{textDecoration: "none"}}>
             <Button
               variant={'solid'}
               colorScheme={'evoOrange'}
@@ -187,7 +188,7 @@ const Home = () => {
         And the best part? Every service is connected to each other, building a huge and profitable ecosystem!
         </Text>
         <Heading size="lg" pt={6} pb={2}>Are you ready?</Heading>
-        <Link href='https://discord.gg/evoverses' _hover={{textDecoration: "none"}}>
+        <Link as={LinkNext} href='https://discord.gg/evoverses' _hover={{textDecoration: "none"}}>
             <Button
               variant={'solid'}
               colorScheme={'evoOrange'}

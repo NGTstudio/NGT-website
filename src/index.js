@@ -14,10 +14,6 @@ import '@fontsource/nunito/800.css';
 import '@fontsource/nunito/900.css';
 
 import theme from './themes/Default/Default';
-import ReactGA from "react-ga4";
-
-ReactGA.initialize("G-VV5KC401XE");
-ReactGA.send("pageview");
 
 ReactDOM.render(
   <StrictMode>

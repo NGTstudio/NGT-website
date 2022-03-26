@@ -27,6 +27,7 @@ import {
 
 import NavLink from '../NavLink/NavLink';
 import ReactGA from 'react-ga4';
+import { Link as LinkNext } from "next/link";
 
 const Links = [
   {
@@ -111,6 +112,7 @@ const Nav = () => {
             ))}
           </HStack>
           <Link
+           as={LinkNext}
             href="https://discord.gg/evoverses"
             _hover={{ textDecoration: 'none' }}
           >

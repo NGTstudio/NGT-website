@@ -7,7 +7,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#231C29" />
         <meta
@@ -18,8 +18,8 @@ export default function Document() {
           name="description"
           content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: discord.gg/evoverses"
         />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="apple-touch-icon" href="logo192.png" />
+        <link rel="manifest" href="manifest.json" />
         <title>
           EvoVerses: DeFi 2.0 + Crypto Play-to-Earn Game to grow your crypto
           assets
@@ -34,7 +34,7 @@ export default function Document() {
           name="twitter:description"
           content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: discord.gg/evoverses"
         />
-        <meta name="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+        <meta name="twitter:image" content="logo512.png" />
       </Head>
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />

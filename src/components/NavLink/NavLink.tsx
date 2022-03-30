@@ -2,7 +2,13 @@ import { Link, useColorModeValue } from '@chakra-ui/react';
 import LinkNext from 'next/link';
 import React from 'react';
 import ReactGA from 'react-ga4';
-import type { AnalyticsEventProps } from '../Nav';
+//import type { AnalyticsEventProps } from '../Nav';
+
+interface AnalyticsEventProps {
+  category: string;
+  action: string;
+  label: string;
+}
 
 interface NavLinkProps {
   children: React.ReactNode;

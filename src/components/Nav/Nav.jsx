@@ -16,7 +16,7 @@ import NavLink from '../NavLink/NavLink';
 import ReactGA from 'react-ga4';
 import LinkNext from 'next/link';
 
-export interface MenuLinkProps {
+/*export interface MenuLinkProps {
   name: string;
   url: string;
   event: AnalyticsEventProps;
@@ -26,9 +26,9 @@ export interface AnalyticsEventProps {
   category: string;
   action: string;
   label: string;
-}
+}*/
 
-const Links: MenuLinkProps[] = [
+const Links = [
   {
     name: 'Blog',
     url: 'https://evoverses.com/medium',
@@ -67,7 +67,7 @@ const Links: MenuLinkProps[] = [
   },
 ];
 
-const Nav: React.VoidFunctionComponent = () => {
+const Nav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const bgColor = useColorModeValue('gray.100', 'gray.900');

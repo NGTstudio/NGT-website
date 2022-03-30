@@ -89,7 +89,6 @@ const Page: React.VoidFunctionComponent = () => {
             style={{
               background: '#251E2B',
               borderRadius: 10,
-              padding: '8px 8px',
               minWidth: 300,
               minHeight: 400,
               display: 'flex',

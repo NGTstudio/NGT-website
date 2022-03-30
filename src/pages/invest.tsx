@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Box, Stack, useToast, Heading, Text, Image } from '@chakra-ui/react';
 import Nav from '../components/Nav/Nav';
 import React, { useEffect, useState } from 'react';
@@ -14,7 +15,7 @@ const useCountdown = () => {
 
   useEffect(() => {
     const _interval = setInterval(() => {
-      let date_now:any = new Date();
+      const date_now:any = new Date();
       // get total seconds between the times
       let delta = Math.abs(PUBLIC_SALE_ENDS_DATE - date_now) / 1000;
 

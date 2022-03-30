@@ -14,7 +14,7 @@ const useCountdown = () => {
 
   useEffect(() => {
     const _interval = setInterval(() => {
-      let date_now = new Date();
+      let date_now:any = new Date();
       // get total seconds between the times
       let delta = Math.abs(PUBLIC_SALE_ENDS_DATE - date_now) / 1000;
 

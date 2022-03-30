@@ -1,4 +1,4 @@
-import { ColorModeScript } from '@chakra-ui/react'
+import { ColorModeScript } from '@chakra-ui/react';
 import { Html, Head, Main, NextScript } from 'next/document';
 import theme from '../themes/Default/Default';
 
@@ -16,7 +16,7 @@ export default function Document() {
         />
         <meta
           name="description"
-          content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: discord.gg/evoverses"
+          content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: evoverses.com/discord"
         />
         <link rel="apple-touch-icon" href="logo192.png" />
         <link rel="manifest" href="manifest.json" />
@@ -32,7 +32,7 @@ export default function Document() {
         />
         <meta
           name="twitter:description"
-          content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: discord.gg/evoverses"
+          content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: evoverses.com/discord"
         />
         <meta name="twitter:image" content="logo512.png" />
       </Head>

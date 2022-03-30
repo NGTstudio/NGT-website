@@ -1,5 +1,10 @@
 body {
     background-color: #251E2B!important;
+    cursor: url("/cursor_normal.png"), auto;
+}
+
+a, button {
+    cursor: url("/cursor_link.png"), auto!important;
 }
 
 div.react-player {

@@ -3,29 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/icons": "^1.1.7",
-    "@chakra-ui/react": "latest",
-    "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0",
-    "@fontsource/nunito": "^4.5.4",
-    "@testing-library/jest-dom": "^5.9.0",
-    "@testing-library/react": "^10.2.1",
-    "@testing-library/user-event": "^12.0.2",
-    "framer-motion": "^4.0.0",
-    "next": "^12.1.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-ga4": "^1.4.1",
-    "react-gtm-module": "^2.0.11",
-    "react-icons": "^3.0.0",
-    "react-player": "^2.9.0",
-    "react-tooltip": "^4.2.21",
-    "web-vitals": "^0.2.2"
+    "@chakra-ui/icons": "1.1.7",
+    "@chakra-ui/react": "1.8.7",
+    "@emotion/react": "11.8.2",
+    "@emotion/styled": "11.8.1",
+    "@fontsource/nunito": "4.5.6",
+    "@fontsource/press-start-2p": "4.5.5",
+    "@testing-library/jest-dom": "5.16.3",
+    "@testing-library/react": "12.1.4",
+    "@testing-library/user-event": "13.5.0",
+    "@types/jest": "27.4.1",
+    "@types/react-dom": "17.0.14",
+    "framer-motion": "6.2.8",
+    "next": "12.1.1",
+    "react": "17.0.2",
+    "react-countdown": "^2.3.2",
+    "react-dom": "17.0.2",
+    "react-ga4": "1.4.1",
+    "react-gtm-module": "2.0.11",
+    "react-icons": "4.3.1",
+    "react-player": "2.10.0",
+    "react-tooltip": "4.2.21",
+    "typescript": "4.6.3",
+    "web-vitals": "2.1.4"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,5 +47,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "17.0.23",
+    "@types/react": "17.0.43",
+    "@types/react-gtm-module": "2.0.1",
+    "@typescript-eslint/eslint-plugin": "5.16.0",
+    "@typescript-eslint/parser": "5.16.0",
+    "eslint": "8.12.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.29.4",
+    "prettier": "2.6.1"
   }
 }

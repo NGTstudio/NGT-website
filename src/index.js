@@ -12,12 +12,20 @@ import '@fontsource/nunito/600.css';
 import '@fontsource/nunito/700.css';
 import '@fontsource/nunito/800.css';
 import '@fontsource/nunito/900.css';
+import '@fontsource/press-start-2p/200.css';
+import '@fontsource/press-start-2p/300.css';
+import '@fontsource/press-start-2p/400.css';
+import '@fontsource/press-start-2p/500.css';
+import '@fontsource/press-start-2p/600.css';
+import '@fontsource/press-start-2p/700.css';
+import '@fontsource/press-start-2p/800.css';
+import '@fontsource/press-start-2p/900.css';
 
 import theme from './themes/Default/Default';
 
 ReactDOM.render(
   <StrictMode>
-    <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <App />
   </StrictMode>,
   document.getElementById('root')

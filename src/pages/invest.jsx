@@ -117,7 +117,7 @@ const Page = () => {
                 fontSize: "1.4rem",
               }}
             >
-              You can claiming your tokens in:
+              You can claim your tokens in:
             </Heading>
             <Text
               textAlign={"center"}

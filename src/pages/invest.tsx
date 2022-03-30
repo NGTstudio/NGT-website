@@ -33,10 +33,10 @@ const useCountdown = () => {
       // what's left is seconds
       let seconds = Math.floor(delta % 60); // in theory the modulus is not required
 
-      let _textDays = days.length < 2 ? `0${days}` : days;
-      let _textHours = hours.length < 2 ? `0${hours}` : hours;
-      let _textMinutes = minutes.length < 2 ? `0${minutes}` : minutes;
-      let _textSeconds = seconds.length < 2 ? `0${seconds}` : seconds;
+      let _textDays = days.toString().length < 2 ? `0${days}` : days;
+      let _textHours = hours.toString().length < 2 ? `0${hours}` : hours;
+      let _textMinutes = minutes.toString().length < 2 ? `0${minutes}` : minutes;
+      let _textSeconds = seconds.toString().length < 2 ? `0${seconds}` : seconds;
 
       //_setText(`${_textDays}:${_textHours}:${_textMinutes}:${_textSeconds}`);
       _setDays(_textDays);

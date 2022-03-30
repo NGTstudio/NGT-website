@@ -1,17 +1,17 @@
 // @ts-nocheck
-import { Box, Stack, useToast, Heading, Text, Image } from '@chakra-ui/react';
-import Nav from '../components/Nav/Nav';
-import React, { useEffect, useState } from 'react';
-import LoadingOverlay from '../components/LoadingOverlay';
-import Countdown from 'react-countdown';
+import { Box, Stack, useToast, Heading, Text, Image } from "@chakra-ui/react";
+import Nav from "../components/Nav/Nav";
+import React, { useEffect, useState } from "react";
+import LoadingOverlay from "../components/LoadingOverlay";
+import Countdown from "react-countdown";
 
 const PUBLIC_SALE_ENDS_DATE = new Date(1650189600 * 1000);
 
 const useCountdown = () => {
-  const [_days, _setDays] = useState('');
-  const [_hours, _setHours] = useState('');
-  const [_minutes, _setMinutes] = useState('');
-  const [_seconds, _setSeconds] = useState('');
+  const [_days, _setDays] = useState("");
+  const [_hours, _setHours] = useState("");
+  const [_minutes, _setMinutes] = useState("");
+  const [_seconds, _setSeconds] = useState("");
 
   useEffect(() => {
     const _interval = setInterval(() => {
@@ -35,9 +35,12 @@ const useCountdown = () => {
       let seconds = Math.floor(delta % 60); // in theory the modulus is not required
 
       let _textDays = days.toString().length < 2 ? `0${days}` : days.toString();
-      let _textHours = hours.toString().length < 2 ? `0${hours}` : hours.toString();
-      let _textMinutes = minutes.toString().length < 2 ? `0${minutes}` : minutes.toString();
-      let _textSeconds = seconds.toString().length < 2 ? `0${seconds}` : seconds.toString();
+      let _textHours =
+        hours.toString().length < 2 ? `0${hours}` : hours.toString();
+      let _textMinutes =
+        minutes.toString().length < 2 ? `0${minutes}` : minutes.toString();
+      let _textSeconds =
+        seconds.toString().length < 2 ? `0${seconds}` : seconds.toString();
 
       //_setText(`${_textDays}:${_textHours}:${_textMinutes}:${_textSeconds}`);
       _setDays(_textDays);
@@ -60,17 +63,17 @@ const Page = () => {
     <div
       style={{
         backgroundImage: "url('/test.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        height: '100vh',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
         margin: 0,
         padding: 0,
       }}
     >
       <Nav />
       <Stack
-        flexDir={'column'}
+        flexDir={"column"}
         justifyContent="center"
         alignItems="center"
         style={{
@@ -79,61 +82,61 @@ const Page = () => {
       >
         <Box
           style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '20px 20px',
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "20px 20px",
           }}
         >
           <Box
             style={{
-              background: '#251E2B',
+              background: "#251E2B",
               borderRadius: 10,
               minWidth: 300,
               minHeight: 400,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              padding: '1.8rem',
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "1.8rem",
             }}
           >
-            <Image boxSize={'150px'} src={'./loading.gif'} />
+            <Image boxSize={"150px"} src={"./loading.gif"} />
             <Heading
               mt={6}
               mb={5}
               style={{
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                marginLeft: "auto",
+                marginRight: "auto",
                 maxWidth: 600,
-                textAlign: 'center',
+                textAlign: "center",
                 paddingLeft: 20,
                 paddingRight: 20,
                 lineHeight: 1.8,
-                fontSize: '1.4rem',
+                fontSize: "1.4rem",
               }}
             >
               You can claiming your tokens in:
             </Heading>
             <Text
-              textAlign={'center'}
+              textAlign={"center"}
               style={{
                 textShadow:
-                  '0 0 2px black, 0 0 6px black, 0 0 6px black, 0 0 6px black',
+                  "0 0 2px black, 0 0 6px black, 0 0 6px black, 0 0 6px black",
                 fontFamily: "'Press Start 2P'",
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                marginLeft: "auto",
+                marginRight: "auto",
                 maxWidth: 600,
-                textAlign: 'center',
+                textAlign: "center",
                 paddingLeft: 20,
                 paddingRight: 20,
                 lineHeight: 1.8,
-                fontSize: '1rem',
-                filter: 'drop-shadow(0px 0px 6px #DE961A)',
+                fontSize: "1rem",
+                filter: "drop-shadow(0px 0px 6px #DE961A)",
               }}
             >
-              {days} days, {hours} hours, {minutes} minutes, and {seconds}{' '}
+              {days} days, {hours} hours, {minutes} minutes, and {seconds}{" "}
               seconds
             </Text>
           </Box>

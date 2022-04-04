@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Box,
   Center,
@@ -16,7 +17,7 @@ import ReactPlayer from 'react-player/lazy';
 import Nav from '../../components/Nav/Nav';
 import MovingTitle from '../../components/MovingTitle/MovingTitle';
 import ItemCard from '../../components/ItemCard/ItemCard';
-import { Link as LinkNext } from 'next/link';
+import LinkNext from 'next/link';
 const Home = () => {
   const toast = useToast();
 

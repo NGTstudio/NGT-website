@@ -1,1 +1,1 @@
-export { GTM_ID, isDevMode, getChainID } from './config';
+export { GTM_ID, isDevMode, getChainID, getvEVOTokenAddress } from './config';

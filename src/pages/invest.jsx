@@ -304,7 +304,24 @@ const Page = () => {
                       px={5}
                       color="white"
                       onClick={() => {
-
+                        connector.sendAsync({
+                          method: 'metamask_watchAsset',
+                          params: {
+                            "type": "ERC20",
+                            "options": {
+                              "address": tokenAddress,
+                              "symbol": tokenSymbol,
+                              "decimals": tokenDecimals,
+                              "image": tokenImage,
+                            },
+                          },
+                          id: Math.round(Math.random() * 100000),
+                        }, (err, added) => {
+                          console.log('provider returned', err, added)
+                          if (err || 'error' in added) {
+                            return
+                          }
+                        })
                       }}
                     >
                       🌀 Add vEVO token to MetaMask

@@ -132,10 +132,10 @@ const Page = () => {
 
   useEffect(() => {
     const getClaimableAmount = async () => {
-      const _amountObj = await claimVEvoToken(library).methods.userClaimable("0xd96282380599B55d4CF3e4CED0601f4dAB5d912b").call({ from: account });
+      const _amountObj = await claimVEvoToken(library).methods.userClaimable(account).call({ from: account });
       const _amount = _amountObj?.amount;
       const strAmount = _parseClaimableAmount(_amount);
-      console.log(await claimVEvoToken(library).methods.userClaimable("0xd96282380599B55d4CF3e4CED0601f4dAB5d912b").call({ from: account }))
+      console.log(await claimVEvoToken(library).methods.userClaimable(account).call({ from: account }))
       //console.log(await claimVEvoToken(library).methods.claim().send({from: account}))
       //console.log(await claimVEvoToken(library).methods.userClaimable("0xd96282380599B55d4CF3e4CED0601f4dAB5d912b").call({from: account}))
       setClaimableTokens(strAmount);

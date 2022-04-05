@@ -14,10 +14,23 @@ import '@fontsource/press-start-2p/400.css';
 import '../style.global.css';
 import { GTM_ID } from '../config';
 import ReactGA from 'react-ga4';
+import { Web3ReactProvider } from '@web3-react/core'
+import Web3 from 'web3'
+
+import { getChainID } from '../config';
 
 interface WebsiteProps {
   Component: React.FunctionComponent;
   pageProps: any;
+}
+
+const supportedChainIds = [1666600000, 1666700000];
+const connectors = {
+  injected: {},
+}
+
+function getLibrary(provider, connector) {
+  return new Web3(provider);
 }
 
 const Website: React.FunctionComponent<WebsiteProps> = ({
@@ -30,9 +43,13 @@ const Website: React.FunctionComponent<WebsiteProps> = ({
     ReactGA.send('pageview');
   }, []);
 
+  const _chainID : any = getChainID();
+
   return (
     <ChakraProvider theme={DefaultTheme}>
+      <Web3ReactProvider getLibrary={getLibrary}>
       <Component {...pageProps} />
+      </Web3ReactProvider >
     </ChakraProvider>
   );
 };

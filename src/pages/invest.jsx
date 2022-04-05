@@ -1,9 +1,13 @@
 // @ts-nocheck
-import { Box, Stack, useToast, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Stack, useToast, Heading, Text, Image, Button } from "@chakra-ui/react";
 import Nav from "../components/Nav/Nav";
 import React, { useEffect, useState } from "react";
 import LoadingOverlay from "../components/LoadingOverlay";
 import Countdown from "react-countdown";
+import { useWeb3React } from "@web3-react/core";
+import { injected } from "../components/wallet/connectors"
+import { isDevMode, getChainID } from "../config";
+
 
 const PUBLIC_SALE_ENDS_DATE = new Date(1649088000 * 1000);
 
@@ -55,9 +59,19 @@ const useCountdown = () => {
   return [_days, _hours, _minutes, _seconds];
 };
 
+
 const Page = () => {
   const toast = useToast();
   const [days, hours, minutes, seconds] = useCountdown();
+
+  const { address, chainId, provider } = useWeb3();
+
+  useEffect(()=>{
+    if(address) {
+
+    }
+  }, [address]);
+  
 
   return (
     <div
@@ -109,7 +123,7 @@ const Page = () => {
               style={{
                 marginLeft: "auto",
                 marginRight: "auto",
-                maxWidth: 600,
+                maxWidth: 700,
                 textAlign: "center",
                 paddingLeft: 20,
                 paddingRight: 20,
@@ -117,28 +131,12 @@ const Page = () => {
                 fontSize: "1.4rem",
               }}
             >
-              You can claim your tokens in:
+             {
+               address ? `Connected as ${address}` :
+               ``
+             }
             </Heading>
-            <Text
-              textAlign={"center"}
-              style={{
-                textShadow:
-                  "0 0 2px black, 0 0 6px black, 0 0 6px black, 0 0 6px black",
-                fontFamily: "'Press Start 2P'",
-                marginLeft: "auto",
-                marginRight: "auto",
-                maxWidth: 600,
-                textAlign: "center",
-                paddingLeft: 20,
-                paddingRight: 20,
-                lineHeight: 1.8,
-                fontSize: "1rem",
-                filter: "drop-shadow(0px 0px 6px #DE961A)",
-              }}
-            >
-              {days} days, {hours} hours, {minutes} minutes, and {seconds}{" "}
-              seconds
-            </Text>
+            <ConnectWallet />
           </Box>
         </Box>
       </Stack>

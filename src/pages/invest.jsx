@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import LoadingOverlay from "../components/LoadingOverlay";
 import Countdown from "react-countdown";
 
-const PUBLIC_SALE_ENDS_DATE = new Date(1649181600 * 1000);
+const PUBLIC_SALE_ENDS_DATE = new Date(1649187300 * 1000);
 
 const useCountdown = () => {
   const [_days, _setDays] = useState("");

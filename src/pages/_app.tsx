@@ -16,6 +16,7 @@ import { GTM_ID } from '../config';
 import ReactGA from 'react-ga4';
 import { Web3ReactProvider } from '@web3-react/core'
 import Web3 from 'web3'
+import { setWeb3, getWeb3 } from "../web3";
 
 import { getChainID } from '../config';
 
@@ -30,7 +31,9 @@ const connectors = {
 }
 
 function getLibrary(provider, connector) {
-  return new Web3(provider);
+  const _web3 : any = new Web3(provider);
+  setWeb3(_web3);
+  return _web3;
 }
 
 const Website: React.FunctionComponent<WebsiteProps> = ({

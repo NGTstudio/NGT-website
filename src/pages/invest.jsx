@@ -1,9 +1,14 @@
 // @ts-nocheck
-import { Box, Stack, useToast, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Stack, useToast, Heading, Text, Image, Button, Spinner } from "@chakra-ui/react";
 import Nav from "../components/Nav/Nav";
 import React, { useEffect, useState } from "react";
 import LoadingOverlay from "../components/LoadingOverlay";
 import Countdown from "react-countdown";
+import { useWeb3React } from "@web3-react/core";
+import { injected } from "../components/wallet/connectors"
+import { isDevMode, getChainID, getvEVOTokenAddress } from "../config";
+
+import claimVEvoToken from "../contracts/claimVEvoToken";
 
 const PUBLIC_SALE_ENDS_DATE = new Date(1649195999 * 1000);
 
@@ -55,9 +60,95 @@ const useCountdown = () => {
   return [_days, _hours, _minutes, _seconds];
 };
 
+
 const Page = () => {
+  const { active, account, library, connector, activate, deactivate } = useWeb3React();
   const toast = useToast();
   const [days, hours, minutes, seconds] = useCountdown();
+  const [claimableTokens, setClaimableTokens] = useState("0");
+  const [isLoading, setLoading] = useState(false);
+
+  const connect = async () => {
+    try {
+      await activate(injected)
+      localStorage.setItem('isWalletConnected', true)
+    } catch (ex) {
+      console.log(ex)
+    }
+  }
+
+  const disconnect = async () => {
+    try {
+      deactivate()
+      localStorage.setItem('isWalletConnected', false)
+    } catch (ex) {
+      console.log(ex)
+    }
+  }
+
+  const claimTokens = async () => {
+    if (account && parseInt(claimableTokens) > 0) {
+      try {
+        setLoading(true);
+        const _result = await claimVEvoToken(library).methods.claim().send({ from: account });
+        console.log("Tx result", _result);
+        if (_result.status) {
+          setClaimableTokens("0");
+        }
+        toast({
+          title: 'Succesfully claimed your vEVO tokens',
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        });
+      } catch (err) {
+        console.log("Claim Error", err);
+        toast({
+          title: 'Error claiming your vEVO tokens',
+          description: "Try again later and if you still are not able to, contact us on our Discord.",
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+        });
+      } finally {
+        setLoading(false);
+      }
+    }
+  }
+
+  useEffect(() => {
+    const connectWalletOnPageLoad = async () => {
+      if (localStorage?.getItem('isWalletConnected') === 'true') {
+        try {
+          await activate(injected)
+          localStorage.setItem('isWalletConnected', true)
+        } catch (ex) {
+          console.log(ex)
+        }
+      }
+    }
+    connectWalletOnPageLoad()
+  }, [])
+
+  useEffect(() => {
+    const getClaimableAmount = async () => {
+      const _amountObj = await claimVEvoToken(library).methods.userClaimable("0xd96282380599B55d4CF3e4CED0601f4dAB5d912b").call({ from: account });
+      const _amount = _amountObj?.amount;
+      const strAmount = _parseClaimableAmount(_amount);
+      console.log(await claimVEvoToken(library).methods.userClaimable("0xd96282380599B55d4CF3e4CED0601f4dAB5d912b").call({ from: account }))
+      //console.log(await claimVEvoToken(library).methods.claim().send({from: account}))
+      //console.log(await claimVEvoToken(library).methods.userClaimable("0xd96282380599B55d4CF3e4CED0601f4dAB5d912b").call({from: account}))
+      setClaimableTokens(strAmount);
+    }
+    if (account) {
+      getClaimableAmount();
+    }
+  }, [account]);
+
+  const _parseClaimableAmount = str => {
+    return str && str.length > 18 ? str.slice(0, -18) : "0"
+  }
+
 
   return (
     <div
@@ -102,14 +193,14 @@ const Page = () => {
               padding: "1.8rem",
             }}
           >
-            <Image boxSize={"150px"} src={"./loading.gif"} />
+            <Image boxSize={"150px"} src={"./carcoid.gif"} />
             <Heading
               mt={6}
-              mb={5}
+              mb={3}
               style={{
                 marginLeft: "auto",
                 marginRight: "auto",
-                maxWidth: 600,
+                maxWidth: 700,
                 textAlign: "center",
                 paddingLeft: 20,
                 paddingRight: 20,
@@ -117,28 +208,127 @@ const Page = () => {
                 fontSize: "1.4rem",
               }}
             >
-              You can claim your tokens in:
+              {
+                active ? `Connected as ${account}` :
+                  ``
+              }
             </Heading>
-            <Text
-              textAlign={"center"}
-              style={{
-                textShadow:
-                  "0 0 2px black, 0 0 6px black, 0 0 6px black, 0 0 6px black",
-                fontFamily: "'Press Start 2P'",
-                marginLeft: "auto",
-                marginRight: "auto",
-                maxWidth: 600,
-                textAlign: "center",
-                paddingLeft: 20,
-                paddingRight: 20,
-                lineHeight: 1.8,
-                fontSize: "1rem",
-                filter: "drop-shadow(0px 0px 6px #DE961A)",
-              }}
-            >
-              {days} days, {hours} hours, {minutes} minutes, and {seconds}{" "}
-              seconds
-            </Text>
+            {
+              active && (
+                <Heading
+                  mt={0}
+                  mb={8}
+                  style={{
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    maxWidth: 700,
+                    textAlign: "center",
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    lineHeight: 1.8,
+                    fontSize: "1.4rem",
+                  }}
+                >
+                  You have <span style={{ color: '#DE961A' }}>{claimableTokens} vEVO</span> tokens to claim!
+                </Heading>
+              )
+            }
+            {
+              isLoading && (
+                <Spinner mb={5} mt={-3} color='#DE961A' />
+              )
+            }
+            {
+              !active && (
+                <Button
+                  variant={'solid'}
+                  colorScheme={'evoOrange'}
+                  size={'md'}
+                  borderRadius={20}
+                  px={5}
+                  color="white"
+                  onClick={connect}
+                >
+                  🌀 Connect to MetaMask
+                </Button>
+              )
+            }
+            {
+              active && (
+                <Stack direction='row' spacing={4}>
+                  {parseInt(claimableTokens) > 0 && (
+                    <Button
+                      variant={'solid'}
+                      backgroundColor={isLoading === false ? '#DE961A' : '#adadad'}
+                      size={'md'}
+                      borderRadius={20}
+                      px={5}
+                      color="white"
+                      onClick={claimTokens}
+                    >
+                      🌀 Claim your {claimableTokens} vEVO!
+                    </Button>
+                  )
+                  }
+                  <Button
+                    variant={'solid'}
+                    backgroundColor={'#DE961A'}
+                    size={'md'}
+                    borderRadius={20}
+                    px={5}
+                    color="white"
+                    onClick={async () => {
+                      console.log(library)
+                      library.currentProvider.send({
+                        method: 'metamask_watchAsset',
+                        params: {
+                          "type": "ERC20",
+                          "options": {
+                            "address": getvEVOTokenAddress(),
+                            "symbol": `vEVO${isDevMode ? ' (Test)' : ''}`,
+                            "decimals": 18,
+                            "image": "https://evoverses.com/logo192.png",
+                          },
+                        },
+                        id: Math.round(Math.random() * 100000),
+                      }, (err, added) => {
+                        console.log('provider returned', err, added)
+                        if (err || 'error' in added) {
+                          console.log("Error adding the token", err, added);
+                          toast({
+                            title: 'Error adding vEVO token to the wallet',
+                            description: "Try again later and if you still are not able to, contact us on our Discord.",
+                            status: 'error',
+                            duration: 9000,
+                            isClosable: true,
+                          });
+                        }else{
+                          toast({
+                            title: 'Succesfully added the vEVO token to the wallet',
+                            status: 'success',
+                            duration: 4000,
+                            isClosable: true,
+                          });
+                        }
+                      })
+                    }}
+                  >
+                    🌀 Add vEVO token to MetaMask
+                  </Button>
+                  <Button
+                    variant={'solid'}
+                    backgroundColor={'red.600'}
+                    size={'md'}
+                    borderRadius={20}
+                    px={5}
+                    color="white"
+                    onClick={disconnect}
+                  >
+                    Disconnect
+                  </Button>
+                </Stack>
+              )
+            }
           </Box>
         </Box>
       </Stack>

@@ -1,0 +1,12 @@
+diff --git a/node_modules/@thirdweb-dev/sdk/dist/constants/chains.d.ts b/node_modules/@thirdweb-dev/sdk/dist/constants/chains.d.ts
+index 12494fd..e2ca556 100644
+--- a/node_modules/@thirdweb-dev/sdk/dist/constants/chains.d.ts
++++ b/node_modules/@thirdweb-dev/sdk/dist/constants/chains.d.ts
+@@ -13,6 +13,7 @@ export declare enum ChainId {
+     Moonriver = 1285,
+     Mumbai = 80001,
+     Harmony = 1666600000,
++    HarmonyTestnet = 1666700000,
+     Localhost = 1337,
+     Hardhat = 31337,
+     Fantom = 250,

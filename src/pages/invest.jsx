@@ -10,7 +10,6 @@ import { isDevMode, getChainID, getvEVOTokenAddress } from "../config";
 
 import claimVEvoToken from "../contracts/claimVEvoToken";
 
-
 const PUBLIC_SALE_ENDS_DATE = new Date(1649195999 * 1000);
 
 const useCountdown = () => {

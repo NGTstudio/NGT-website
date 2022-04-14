@@ -10,6 +10,7 @@ import { isDevMode, getChainID, getvEVOTokenAddress } from "../config";
 import LinkNext from 'next/link';
 
 import claimVEvoToken from "../contracts/claimVEvoToken";
+import { getEVOTokenAddress } from "../config/config";
 
 const PUBLIC_SALE_ENDS_DATE = new Date(1650204000 * 1000);
 
@@ -183,7 +184,7 @@ const Page = () => {
             </Text>
             <Image mt={5} boxSize={"150px"} src={"./carcoid.gif"} />
             {
-              false && chainId !== getChainID() && (
+              chainId !== getChainID() && (
                 <Button
                 mt={5}
                   variant={'solid'}
@@ -204,7 +205,7 @@ const Page = () => {
               )
             }
             {
-              false && chainId === getChainID() && (
+              chainId === getChainID() && (
                 <Stack mt={5} direction='row' spacing={4}>
                   {
                     !active && (
@@ -236,10 +237,10 @@ const Page = () => {
                           params: {
                             "type": "ERC20",
                             "options": {
-                              "address": getvEVOTokenAddress(),
+                              "address": getEVOTokenAddress(),
                               "symbol": `EVO${isDevMode ? ' (Test)' : ''}`,
                               "decimals": 18,
-                              "image": "https://evoverses.com/logo192.png",
+                              "image": "https://evoverses.com/evoToken.png",
                             },
                           },
                           id: Math.round(Math.random() * 100000),

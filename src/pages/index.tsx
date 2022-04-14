@@ -22,17 +22,17 @@ const Home: React.VoidFunctionComponent = () => {
   const onClickOpenApp = () => {
     ReactGA.event({
       category: 'conversion',
-      action: 'not_yet_app',
+      action: 'open_app',
       label: 'hero',
     });
-    toast({
+    /*toast({
       title: `🦄 Soon!`,
       description:
         'Hey, we will launch the DEX soon, meanwhile be sure to join our Discord!',
       status: 'info',
       duration: 9000,
       isClosable: true,
-    });
+    });*/
   };
   return (
     <>
@@ -66,17 +66,22 @@ const Home: React.VoidFunctionComponent = () => {
           columnGap={{ base: 0, sm: 4 }}
           pt={4}
         >
+          <Link as={LinkNext}
+            href="/app"
+            _hover={{ textDecoration: 'none' }}>
           <Button
             variant={'solid'}
-            bg="#959595"
+            bg="#7205D1"
             color="white"
             size={'md'}
             borderRadius={20}
             px={5}
             onClick={onClickOpenApp}
+            _hover={{ backgroundColor: '#8b3ad1'}}
           >
-            Open App
+            🚀 Open App
           </Button>
+          </Link>
           <Link
             as={LinkNext}
             href="https://evoverses.com/discord"

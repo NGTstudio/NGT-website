@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Box, Stack, useToast, Heading, Text, Image, Button, Spinner } from "@chakra-ui/react";
+import { Box, Stack, useToast, Heading, Text, Image, Button, Link } from "@chakra-ui/react";
 import Nav from "../components/Nav/Nav";
 import React, { useEffect, useState } from "react";
 import LoadingOverlay from "../components/LoadingOverlay";
@@ -7,6 +7,7 @@ import Countdown from "react-countdown";
 import { useWeb3React } from "@web3-react/core";
 import { injected } from "../components/wallet/connectors"
 import { isDevMode, getChainID, getvEVOTokenAddress } from "../config";
+import LinkNext from 'next/link';
 
 import claimVEvoToken from "../contracts/claimVEvoToken";
 
@@ -62,7 +63,7 @@ const useCountdown = () => {
 
 
 const Page = () => {
-  const { active, account, library, connector, activate, deactivate } = useWeb3React();
+  const { active, account, library, connector, activate, deactivate, chainId } = useWeb3React();
   const toast = useToast();
   const [days, hours, minutes, seconds] = useCountdown();
   const [claimableTokens, setClaimableTokens] = useState("0");
@@ -181,88 +182,126 @@ const Page = () => {
               seconds
             </Text>
             <Image mt={5} boxSize={"150px"} src={"./carcoid.gif"} />
-            <Stack mt={5} direction='row' spacing={4}>
-              {
-                !active && (
-                  <Button
-                    variant={'solid'}
-                    colorScheme={'evoOrange'}
-                    size={'md'}
-                    borderRadius={20}
-                    px={5}
-                    color="white"
-                    onClick={connect}
-                  >
-                    🌀 Connect to MetaMask
-                  </Button>
-                )
-              }
-              {active && (
+            {
+              chainId !== getChainID() && (
                 <Button
+                mt={5}
                   variant={'solid'}
-                  backgroundColor={'#DE961A'}
+                  bg="#959595"
+                  color="white"
                   size={'md'}
                   borderRadius={20}
                   px={5}
-                  color="white"
-                  onClick={async () => {
-                    console.log({
-                          "address": getvEVOTokenAddress(),
-                          "symbol": `EVO${isDevMode ? ' (Test)' : ''}`,
-                          "decimals": 18,
-                          "image": "https://evoverses.com/logo192.png",
-                        })
-                    library.currentProvider.send({
-                      method: 'metamask_watchAsset',
-                      params: {
-                        "type": "ERC20",
-                        "options": {
-                          "address": getvEVOTokenAddress(),
-                          "symbol": `EVO${isDevMode ? ' (Test)' : ''}`,
-                          "decimals": 18,
-                          "image": "https://evoverses.com/logo192.png",
-                        },
-                      },
-                      id: Math.round(Math.random() * 100000),
-                    }, (err, added) => {
-                      console.log('provider returned', err, added)
-                      if (err || 'error' in added) {
-                        console.log("Error adding the token", err, added);
-                        toast({
-                          title: 'Error adding EVO token to the wallet',
-                          description: "Try again later and if you still are not able to, contact us on our Discord.",
-                          status: 'error',
-                          duration: 9000,
-                          isClosable: true,
-                        });
-                      } else {
-                        toast({
-                          title: 'Succesfully added the EVO token to the wallet',
-                          status: 'success',
-                          duration: 4000,
-                          isClosable: true,
-                        });
-                      }
-                    })
+                  style={{
+                    cursor: 'not-allowed!important'
+                  }}
+                  _hover={{
+                    cursor: 'not-allowed!important'
                   }}
                 >
-                  🌀 Add EVO token to MetaMask
+                  ❌ Wrong network!
                 </Button>
-              )}
-              {active && (
-                <Button
-                  variant={'solid'}
-                  backgroundColor={'red.600'}
-                  size={'md'}
-                  borderRadius={20}
-                  px={5}
-                  color="white"
-                  onClick={disconnect}
-                >
-                  Disconnect
-                </Button>
-              )}
-            </Stack>
+              )
+            }
+            {
+              chainId === getChainID() && (
+                <Stack mt={5} direction='row' spacing={4}>
+                  {
+                    !active && (
+                      <Button
+                        variant={'solid'}
+                        colorScheme={'evoOrange'}
+                        size={'md'}
+                        borderRadius={20}
+                        px={5}
+                        color="white"
+                        onClick={connect}
+                      >
+                        🌀 Connect to MetaMask
+                      </Button>
+                    )
+                  }
+                  {active && (
+                    <Button
+                      variant={'solid'}
+                      backgroundColor={'#DE961A'}
+                      size={'md'}
+                      borderRadius={20}
+                      px={5}
+                      color="white"
+                      onClick={async () => {
+                        console.log(chainId)
+                        library.currentProvider.send({
+                          method: 'metamask_watchAsset',
+                          params: {
+                            "type": "ERC20",
+                            "options": {
+                              "address": getvEVOTokenAddress(),
+                              "symbol": `EVO${isDevMode ? ' (Test)' : ''}`,
+                              "decimals": 18,
+                              "image": "https://evoverses.com/logo192.png",
+                            },
+                          },
+                          id: Math.round(Math.random() * 100000),
+                        }, (err, added) => {
+                          console.log('provider returned', err, added)
+                          if (err || 'error' in added) {
+                            console.log("Error adding the token", err, added);
+                            toast({
+                              title: 'Error adding EVO token to the wallet',
+                              description: "Try again later and if you still are not able to, contact us on our Discord.",
+                              status: 'error',
+                              duration: 9000,
+                              isClosable: true,
+                            });
+                          } else {
+                            toast({
+                              title: 'Succesfully added the EVO token to the wallet',
+                              status: 'success',
+                              duration: 4000,
+                              isClosable: true,
+                            });
+                          }
+                        })
+                      }}
+                    >
+                      🌀 Add EVO token to MetaMask
+                    </Button>
+                  )}
+                  {active && (
+                    <Button
+                      variant={'solid'}
+                      backgroundColor={'red.600'}
+                      size={'md'}
+                      borderRadius={20}
+                      px={5}
+                      color="white"
+                      onClick={disconnect}
+                    >
+                      Disconnect
+                    </Button>
+                  )}
+                </Stack>
+              )
+            }
+            <Text
+              mt={7}
+              textAlign={"center"}
+              style={{
+                marginLeft: "auto",
+                marginRight: "auto",
+                maxWidth: 600,
+                textAlign: "center",
+                paddingLeft: 20,
+                paddingRight: 20,
+                fontStyle: 'italic',
+                color: '#c1c1c1'
+              }}
+            >
+              Read more about how it will work <Link as={LinkNext}
+            href=""><span className="link" style={{color: "#DE961A"}}>here</span></Link> or join our Discord <Link as={LinkNext}
+            href="https://evoverses.com/discord"><span className="link" style={{color: "#DE961A"}}>here</span></Link> for any questions!
+            </Text>
           </Box>
         </Box>
       </Stack>

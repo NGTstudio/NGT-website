@@ -30,6 +30,15 @@ export interface AnalyticsEventProps {
 
 const Links = [
   {
+    name: 'Discord',
+    url: 'https://evoverses.com/discord',
+    event: {
+      category: 'conversion',
+      action: 'open_discord',
+      label: 'menu',
+    },
+  },
+  {
     name: 'Blog',
     url: 'https://evoverses.com/medium',
     event: {

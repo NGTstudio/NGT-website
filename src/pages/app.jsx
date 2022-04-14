@@ -183,7 +183,7 @@ const Page = () => {
             </Text>
             <Image mt={5} boxSize={"150px"} src={"./carcoid.gif"} />
             {
-              chainId !== getChainID() && (
+              false && chainId !== getChainID() && (
                 <Button
                 mt={5}
                   variant={'solid'}
@@ -204,7 +204,7 @@ const Page = () => {
               )
             }
             {
-              chainId === getChainID() && (
+              false && chainId === getChainID() && (
                 <Stack mt={5} direction='row' spacing={4}>
                   {
                     !active && (
@@ -299,7 +299,7 @@ const Page = () => {
               }}
             >
               Read more about how it will work <Link as={LinkNext}
-            href=""><span className="link" style={{color: "#DE961A"}}>here</span></Link> or join our Discord <Link as={LinkNext}
+            href="https://evoverses.medium.com/after-launch-info-staking-and-avatars-78258ee0a5c1?source=friends_link&sk=77ebe4436381e2d6b9815981c65d8ef9"><span className="link" style={{color: "#DE961A"}}>here</span></Link> or join our Discord <Link as={LinkNext}
             href="https://evoverses.com/discord"><span className="link" style={{color: "#DE961A"}}>here</span></Link> for any questions!
             </Text>
           </Box>

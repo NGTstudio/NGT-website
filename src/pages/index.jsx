@@ -16,7 +16,7 @@ import ItemCard from '../components/ItemCard/ItemCard';
 import LinkNext from 'next/link';
 import React from 'react';
 
-const Home: React.VoidFunctionComponent = () => {
+const Home = () => {
   const toast = useToast();
 
   const onClickOpenApp = () => {

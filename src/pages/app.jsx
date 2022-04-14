@@ -184,7 +184,7 @@ const Page = () => {
             </Text>
             <Image mt={5} boxSize={"150px"} src={"./carcoid.gif"} />
             {
-              chainId !== getChainID() && (
+              false && (
                 <Button
                 mt={5}
                   variant={'solid'}
@@ -200,15 +200,15 @@ const Page = () => {
                     cursor: 'not-allowed!important'
                   }}
                 >
-                  ❌ Wrong network!
+                  ❌ Wrong network! a{chainId}a
                 </Button>
               )
             }
             {
-              chainId === getChainID() && (
+              true && (
                 <Stack mt={5} direction='row' spacing={4}>
                   {
-                    !active && (
+                    !active && !chainId && (
                       <Button
                         variant={'solid'}
                         colorScheme={'evoOrange'}
@@ -222,7 +222,7 @@ const Page = () => {
                       </Button>
                     )
                   }
-                  {active && (
+                  {active && chainId === getChainID() && (
                     <Button
                       variant={'solid'}
                       backgroundColor={'#DE961A'}
@@ -269,7 +269,7 @@ const Page = () => {
                       🌀 Add EVO token to MetaMask
                     </Button>
                   )}
-                  {active && (
+                  {active && chainId === getChainID() && (
                     <Button
                       variant={'solid'}
                       backgroundColor={'red.600'}

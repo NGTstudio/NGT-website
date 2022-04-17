@@ -12,7 +12,7 @@ import LinkNext from 'next/link';
 import claimVEvoToken from "../contracts/claimVEvoToken";
 import { getEVOTokenAddress } from "../config/config";
 
-const PUBLIC_SALE_ENDS_DATE = new Date(1650204000 * 1000);
+const PUBLIC_SALE_ENDS_DATE = new Date(1650391200 * 1000);
 
 const useCountdown = () => {
   const [_days, _setDays] = useState("");
@@ -296,11 +296,27 @@ const Page = () => {
                 paddingLeft: 20,
                 paddingRight: 20,
                 fontStyle: 'italic',
+                color: '#DE961A'
+              }}
+            >
+              We have moved the staking launch to make sure everything will work perfect for everyone. In compensation we are gonna increase by a lot the emissions the first day. You can read the announcement <Link as={LinkNext}
+            href="https://discord.com/channels/892060131037151242/916880784097427456/965220815782158376"><span className="link" style={{color: "#DE961A"}}><u>here</u></span></Link>.
+            </Text>
+            <Text
+              mt={7}
+              textAlign={"center"}
+              style={{
+                marginLeft: "auto",
+                marginRight: "auto",
+                maxWidth: 600,
+                textAlign: "center",
+                paddingLeft: 20,
+                paddingRight: 20,
+                fontStyle: 'italic',
                 color: '#c1c1c1'
               }}
             >
-              Read more about how it will work <Link as={LinkNext}
-            href="https://evoverses.medium.com/after-launch-info-staking-and-avatars-78258ee0a5c1?source=friends_link&sk=77ebe4436381e2d6b9815981c65d8ef9"><span className="link" style={{color: "#DE961A"}}>here</span></Link> or join our Discord <Link as={LinkNext}
+              Join our Discord <Link as={LinkNext}
             href="https://evoverses.com/discord"><span className="link" style={{color: "#DE961A"}}>here</span></Link> for any questions!
             </Text>
           </Box>

@@ -186,7 +186,7 @@ const Page = () => {
             {
               false && (
                 <Button
-                mt={5}
+                  mt={5}
                   variant={'solid'}
                   bg="#959595"
                   color="white"
@@ -285,6 +285,20 @@ const Page = () => {
                 </Stack>
               )
             }
+            <Link as={LinkNext} href="https://app.evoverses.com">
+              <Button
+                variant={'solid'}
+                mt={15}
+                bg="#7205D1"
+              size={'md'}
+              borderRadius={20}
+              px={5}
+              color="white"
+              _hover={{ backgroundColor: '#8b3ad1'}}
+              >
+                🚀 Open App
+              </Button>
+            </Link>
             <Text
               mt={7}
               textAlign={"center"}
@@ -299,8 +313,7 @@ const Page = () => {
                 color: '#DE961A'
               }}
             >
-              We have moved the staking launch to make sure everything will work perfect for everyone. In compensation we are gonna increase by a lot the emissions the first day. You can read the announcement <Link as={LinkNext}
-            href="https://discord.com/channels/892060131037151242/916880784097427456/965220815782158376"><span className="link" style={{color: "#DE961A"}}><u>here</u></span></Link>.
+              Emissions start when the countdown reaches 0. In the meanwhile, you can start staking!
             </Text>
             <Text
               mt={7}
@@ -317,7 +330,7 @@ const Page = () => {
               }}
             >
               Join our Discord <Link as={LinkNext}
-            href="https://evoverses.com/discord"><span className="link" style={{color: "#DE961A"}}>here</span></Link> for any questions!
+                href="https://evoverses.com/discord"><span className="link" style={{ color: "#DE961A" }}>here</span></Link> for any questions!
             </Text>
           </Box>
         </Box>

@@ -1,6 +1,6 @@
 body {
   background-color: #000000 !important;
-  cursor: url("/cursor_normal.png"), auto;
+  cursor: url("https://evoverses.com/cursor_normal.png"), auto;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -9,7 +9,7 @@ a,
 button,
 span.link,
 a.chakra-link {
-  cursor: url("/cursor_link.png"), auto !important;
+  cursor: url("https://evoverses.com/cursor_link.png"), pointer !important;
 }
 
 

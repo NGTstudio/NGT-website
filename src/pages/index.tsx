@@ -94,6 +94,7 @@ const Home: React.VoidFunctionComponent = () => {
                 borderRadius={20}
                 px={5}
                 onClick={onClickOpenApp}
+                style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
                 _hover={{ backgroundColor: '#8b3ad1' }}
               >
                 🚀 Open App
@@ -112,6 +113,7 @@ const Home: React.VoidFunctionComponent = () => {
                 borderRadius={20}
                 px={5}
                 color="white"
+                style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
                 onClick={() => {
                   ReactGA.event({
                     category: 'conversion',
@@ -128,45 +130,41 @@ const Home: React.VoidFunctionComponent = () => {
       </Box>
       <Box display={{ base: 'flex', md: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} justifyContent={{ base: 'center', md: 'flex-end' }} alignItems={{ base: 'center', md: 'center' }} rowGap={3} columnGap={10} py={4} px={4}>
         <Link
+          as={LinkNext}
           href="https://evoverses.com/whitepaper"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{
-            cursor: 'url("/cursor_link.png"), auto !important'
-          }}
+          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >🧾 Whitepaper</Link>
         <Link
+              as={LinkNext}
           href="https://evoverses.com/medium"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{
-            cursor: 'url("/cursor_link.png"), auto !important'
-          }}
+          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >📰 Medium</Link>
         <Link
+              as={LinkNext}
           href="https://evoverses.com/telegram"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{
-            cursor: 'url("/cursor_link.png"), auto !important'
-          }}
+          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >😎 Telegram Group</Link>
         <Link
+              as={LinkNext}
           href="https://evoverses.com/twitter"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{
-            cursor: 'url("/cursor_link.png"), auto !important'
-          }}
+          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >🗣 Twitter</Link>
         <Link
 
+as={LinkNext}
           href="https://foxswap.one/#/swap?inputCurrency=ONE&outputCurrency=0x5b747e23a9E4c509dd06fbd2c0e3cB8B846e398F"
           _hover={{ textDecoration: 'none' }} className='textShadow'
           target={'_blank'}
-          style={{
-            cursor: 'url("/cursor_link.png"), auto !important'
-          }}
+          
+          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >
           <Button
             variant={'solid'}
@@ -175,9 +173,7 @@ const Home: React.VoidFunctionComponent = () => {
             borderRadius={20}
             px={5}
             color="white"
-            style={{
-              cursor: 'url("/cursor_link.png"), auto !important'
-            }}
+            style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
             onClick={() => {
               ReactGA.event({
                 category: 'conversion',

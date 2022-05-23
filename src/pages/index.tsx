@@ -103,6 +103,7 @@ const Home: React.VoidFunctionComponent = () => {
               as={LinkNext}
               href="https://evoverses.com/discord"
               _hover={{ textDecoration: 'none' }}
+              target={'_blank'}
             >
               <Button
                 variant={'solid'}
@@ -129,24 +130,28 @@ const Home: React.VoidFunctionComponent = () => {
         <Link
           href="https://evoverses.com/whitepaper"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
+          target={'_blank'}
         >🧾 Whitepaper</Link>
         <Link
           href="https://evoverses.com/medium"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
+          target={'_blank'}
         >📰 Medium</Link>
         <Link
           href="https://evoverses.com/telegram"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
+          target={'_blank'}
         >😎 Telegram Group</Link>
         <Link
           href="https://evoverses.com/twitter"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
+          target={'_blank'}
         >🗣 Twitter</Link>
         <Link
 
-          href="https://foxswap.one/#/swap?inputCurrency=ONE&outputCurrency=0x0159ed2e06ddcd46a25e74eb8e159ce666b28687"
+          href="https://foxswap.one/#/swap?inputCurrency=ONE&outputCurrency=0x5b747e23a9E4c509dd06fbd2c0e3cB8B846e398F"
           _hover={{ textDecoration: 'none' }} className='textShadow'
-
+          target={'_blank'}
         >
           <Button
             variant={'solid'}

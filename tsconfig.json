@@ -98,7 +98,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/pages/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -30,6 +30,15 @@ export interface AnalyticsEventProps {
 
 const Links = [
   {
+    name: 'Discord',
+    url: 'https://evoverses.com/discord',
+    event: {
+      category: 'conversion',
+      action: 'open_discord',
+      label: 'menu',
+    },
+  },
+  {
     name: 'Blog',
     url: 'https://evoverses.com/medium',
     event: {
@@ -120,25 +129,26 @@ const Nav = () => {
           </HStack>
           <Link
             as={LinkNext}
-            href="https://evoverses.com/discord"
+            href="/app"
             _hover={{ textDecoration: 'none' }}
           >
             <Button
               variant={'solid'}
-              colorScheme={'evoOrange'}
+              bg="#7205D1"
               size={'md'}
               borderRadius={20}
               px={5}
               color="white"
+              _hover={{ backgroundColor: '#8b3ad1'}}
               onClick={() => {
                 ReactGA.event({
                   category: 'conversion',
-                  action: 'open_discord',
+                  action: 'open_app',
                   label: 'top_bar',
                 });
               }}
             >
-              Join 🌀 Discord
+              🚀 Open App
             </Button>
           </Link>
         </Flex>

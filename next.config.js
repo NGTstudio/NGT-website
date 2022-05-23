@@ -37,6 +37,16 @@ module.exports = {
         destination: 'https://www.reddit.com/r/EvoVerses/',
         permanent: true,
       },
+      {
+        source: '/app',
+        destination: 'https://beta.evoverses.com',
+        permanent: true
+      },
+      {
+        source: '/beta',
+        destination: 'https://beta.evoverses.com',
+        permanent: true
+      }
     ];
   },
 };

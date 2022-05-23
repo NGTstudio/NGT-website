@@ -35,7 +35,7 @@ const Home: React.VoidFunctionComponent = () => {
 
   return (
     <Box id="video-wrapper">
-      <video id="player" className="video-js vjs-default-skin" controls={false} autoPlay={true} width="1880px" height="980px" muted loop playsInline={true}>
+      <video id="player" controls={false} autoPlay={true} muted loop playsInline={true}>
         <source src="https://vtbhjtgoioenwaeaphpz.supabase.co/storage/v1/object/public/media-assets/evoverses_trailer_no_audio.mp4?t=2022-05-23T12:37:17.200Z" type="video/mp4" />
       </video>
       <Box className='hero' flexDirection={'column'} justifyContent={'center'} display={'flex'} minH={'110vh'}>
@@ -131,27 +131,42 @@ const Home: React.VoidFunctionComponent = () => {
           href="https://evoverses.com/whitepaper"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
+          style={{
+            cursor: 'url("/cursor_link.png"), auto !important'
+          }}
         >🧾 Whitepaper</Link>
         <Link
           href="https://evoverses.com/medium"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
+          style={{
+            cursor: 'url("/cursor_link.png"), auto !important'
+          }}
         >📰 Medium</Link>
         <Link
           href="https://evoverses.com/telegram"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
+          style={{
+            cursor: 'url("/cursor_link.png"), auto !important'
+          }}
         >😎 Telegram Group</Link>
         <Link
           href="https://evoverses.com/twitter"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
+          style={{
+            cursor: 'url("/cursor_link.png"), auto !important'
+          }}
         >🗣 Twitter</Link>
         <Link
 
           href="https://foxswap.one/#/swap?inputCurrency=ONE&outputCurrency=0x5b747e23a9E4c509dd06fbd2c0e3cB8B846e398F"
           _hover={{ textDecoration: 'none' }} className='textShadow'
           target={'_blank'}
+          style={{
+            cursor: 'url("/cursor_link.png"), auto !important'
+          }}
         >
           <Button
             variant={'solid'}
@@ -160,6 +175,9 @@ const Home: React.VoidFunctionComponent = () => {
             borderRadius={20}
             px={5}
             color="white"
+            style={{
+              cursor: 'url("/cursor_link.png"), auto !important'
+            }}
             onClick={() => {
               ReactGA.event({
                 category: 'conversion',

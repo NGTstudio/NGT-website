@@ -1,6 +1,7 @@
 body {
-  background-color: #FFFFFF !important;
+  background-color: #000000 !important;
   cursor: url("/cursor_normal.png"), auto;
+  overflow: scroll;
   overflow-x: hidden;
 }
 
@@ -14,6 +15,15 @@ a.chakra-link {
 
 div.video-container {
   position: relative;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+
+  overflow: scroll;
+}
+
+div.video-container::-webkit-scrollbar { 
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
 div.video-container>video,

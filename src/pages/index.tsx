@@ -16,21 +16,21 @@ import Image from 'next/image';
 
 
 const Home: React.VoidFunctionComponent = () => {
-  const toast = useToast();
+  //const toast = useToast();
   const onClickOpenApp = () => {
     ReactGA.event({
       category: 'conversion',
-      action: 'not_yet_app',
+      action: 'app',
       label: 'hero',
     });
-    toast({
+    /*toast({
       title: `🦄 Soon!`,
       description:
         'Hey, we will launch the DEX soon, meanwhile be sure to join our Discord!',
       status: 'info',
       duration: 9000,
       isClosable: true,
-    });
+    });*/
   };
 
   return (

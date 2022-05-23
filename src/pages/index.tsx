@@ -35,7 +35,7 @@ const Home: React.VoidFunctionComponent = () => {
 
   return (
     <Box id="video-wrapper">
-      <video id="player" className="video-js vjs-default-skin" controls={false} autoPlay={true} width="1880px" height="980px" muted loop>
+      <video id="player" className="video-js vjs-default-skin" controls={false} autoPlay={true} width="1880px" height="980px" muted loop playsInline={true}>
         <source src="https://vtbhjtgoioenwaeaphpz.supabase.co/storage/v1/object/public/media-assets/evoverses_trailer_no_audio.mp4?t=2022-05-23T12:37:17.200Z" type="video/mp4" />
       </video>
       <Box className='hero' flexDirection={'column'} justifyContent={'center'} display={'flex'} minH={'110vh'}>

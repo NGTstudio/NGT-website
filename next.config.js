@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         source: '/app',
-        destination: 'https://beta.evoverses.com',
+        destination: 'https://app.evoverses.com',
         permanent: true
       },
       {

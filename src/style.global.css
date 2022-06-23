@@ -1,8 +1,7 @@
 body {
   background-color: #000000 !important;
   cursor: url("https://evoverses.com/cursor_normal.png"), auto;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 a,
@@ -48,6 +47,12 @@ div.video-container>video {
 #video-wrapper {
   position: relative;
   overflow: hidden;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #video-wrapper>#player {

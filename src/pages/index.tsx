@@ -13,7 +13,7 @@ import LinkNext from 'next/link';
 import EvoVersesLogo from '../../public/evoverses.png';
 import React from 'react';
 import Image from 'next/image';
-
+import Typewriter from 'typewriter-effect';
 
 const Home: React.VoidFunctionComponent = () => {
   //const toast = useToast();
@@ -61,7 +61,13 @@ const Home: React.VoidFunctionComponent = () => {
             size={'lg'}
             className='textShadow'
           >
-            EvoVerses: A 3D <span style={{ color: 'rgb(255, 203, 58)' }}> Pokemon-inspired</span> game in Harmony ONE.
+            EvoVerses: A 3D <span style={{ color: 'rgb(255, 203, 58)' }}> Pokemon-inspired</span> game in <Typewriter
+  options={{
+    strings: ['Avalanche.', 'your mobile.', 'your desktop.', 'your browser.'],
+    autoStart: true,
+    loop: true,
+  }}
+/>
           </Heading>
           <Text
             opacity={1}

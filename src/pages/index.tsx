@@ -170,7 +170,7 @@ const Home: React.VoidFunctionComponent = () => {
         <Link
 
 as={LinkNext}
-          href="https://foxswap.one/#/swap?inputCurrency=ONE&outputCurrency=0x5b747e23a9E4c509dd06fbd2c0e3cB8B846e398F"
+          href="https://traderjoexyz.com/trade?outputCurrency=0x42006Ab57701251B580bDFc24778C43c9ff589A1#/"
           _hover={{ textDecoration: 'none' }} className='textShadow'
           target={'_blank'}
           
@@ -187,7 +187,7 @@ as={LinkNext}
             onClick={() => {
               ReactGA.event({
                 category: 'conversion',
-                action: 'open_foxswap',
+                action: 'open_traderjoe',
                 label: 'bottom',
               });
             }}

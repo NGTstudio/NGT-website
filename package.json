@@ -47,7 +47,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "installRedirects": "cp ./_redirects ./out/_redirects"
   },
   "eslintConfig": {
     "extends": "react-app"

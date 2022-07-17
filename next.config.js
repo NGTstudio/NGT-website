@@ -1,9 +1,10 @@
 module.exports = {
   src: './src',
-  images: {
-    loader: 'akamai',
-    path: '/',
-  },
+  experimental: {
+    images: {
+        unoptimized: true
+    }
+},
   async redirects() {
     return [
       {

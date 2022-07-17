@@ -34,7 +34,10 @@ const Home: React.VoidFunctionComponent = () => {
   };
 
   return (
-    <Box id="video-wrapper" minH={'100vh'}>
+    <Box id="video-wrapper" minH={'100vh'} rowGap={{
+      sm: '50px',
+      md: '0'
+    }}>
       <video id="player" controls={false} autoPlay={true} muted loop playsInline={true}>
         <source src="https://vtbhjtgoioenwaeaphpz.supabase.co/storage/v1/object/public/media-assets/evoverses_trailer_no_audio.mp4?t=2022-05-23T12:37:17.200Z" type="video/mp4" />
       </video>
@@ -134,42 +137,39 @@ const Home: React.VoidFunctionComponent = () => {
           </Flex>
         </Stack>
       </Box>
-      <Box display={{ base: 'flex', md: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} justifyContent={{ base: 'center', md: 'flex-end' }} alignItems={{ base: 'center', md: 'center' }} rowGap={3} columnGap={10} py={4} px={4} style={{
-        position: 'absolute',
+      <Box display={{ base: 'flex', md: 'flex' }} flexDirection={{ base: 'column', md: 'row' }} justifyContent={{ base: 'center', md: 'flex-end' }} alignItems={{ base: 'center', md: 'center' }} rowGap={{
+        base: 8,
+        md: 3
+      }} columnGap={10} py={4} px={4} style={{
+        
         bottom: 0,
         right: 0
-      }}>
+      }} position={{md: 'absolute'}}>
         <Link
-          as={LinkNext}
           href="https://evoverses.com/whitepaper"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
           style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >🧾 Whitepaper</Link>
         <Link
-              as={LinkNext}
           href="https://evoverses.com/medium"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
           style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >📰 Medium</Link>
         <Link
-              as={LinkNext}
           href="https://evoverses.com/telegram"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
           style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >😎 Telegram Group</Link>
         <Link
-              as={LinkNext}
           href="https://evoverses.com/twitter"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
           style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
         >🗣 Twitter</Link>
         <Link
-
-as={LinkNext}
           href="https://traderjoexyz.com/trade?outputCurrency=0x42006Ab57701251B580bDFc24778C43c9ff589A1#/"
           _hover={{ textDecoration: 'none' }} className='textShadow'
           target={'_blank'}

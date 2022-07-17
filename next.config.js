@@ -1,5 +1,9 @@
 module.exports = {
   src: './src',
+  images: {
+    loader: 'akamai',
+    path: '/',
+  },
   async redirects() {
     return [
       {

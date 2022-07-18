@@ -16,7 +16,7 @@ export default function Document() {
         />
         <meta
           name="description"
-          content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: evoverses.com/discord"
+          content="🗺 Game and DeFi // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: evoverses.com/discord"
         />
         <link rel="apple-touch-icon" href="logo192.png" />
         <link rel="manifest" href="manifest.json" />
@@ -32,7 +32,7 @@ export default function Document() {
         />
         <meta
           name="twitter:description"
-          content="🗺 Game and DEX // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: evoverses.com/discord"
+          content="🗺 Game and DeFi // ⚔️ Fight, rank and earn// 🗿 The Evos are waiting for you 👀// Discord: evoverses.com/discord"
         />
         <meta name="twitter:image" content="logo512.png" />
       </Head>

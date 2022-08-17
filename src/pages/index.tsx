@@ -64,13 +64,13 @@ const Home: React.VoidFunctionComponent = () => {
             size={'lg'}
             className='textShadow'
           >
-            EvoVerses: A 3D <span style={{ color: 'rgb(255, 203, 58)' }}> Pokemon-inspired</span> game in <Typewriter
-  options={{
-    strings: ['Avalanche.', 'your mobile.', 'your desktop.', 'your browser.'],
-    autoStart: true,
-    loop: true,
-  }}
-/>
+            <Text as="span" color={"#ffba42"}>Evo</Text><Text as="span" color={"#ffffff"}>Verses</Text>: A 3D game where you can <Typewriter
+              options={{
+                strings: ['⭐ Collect', '⚔️ Battle', '✅ Evolve', '🗺️ Explore'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </Heading>
           <Text
             opacity={1}
@@ -103,7 +103,7 @@ const Home: React.VoidFunctionComponent = () => {
                 borderRadius={20}
                 px={5}
                 onClick={onClickOpenApp}
-                style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+                style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
                 _hover={{ backgroundColor: '#8b3ad1' }}
               >
                 🚀 Open App
@@ -122,7 +122,7 @@ const Home: React.VoidFunctionComponent = () => {
                 borderRadius={20}
                 px={5}
                 color="white"
-                style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+                style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
                 onClick={() => {
                   ReactGA.event({
                     category: 'conversion',
@@ -141,40 +141,40 @@ const Home: React.VoidFunctionComponent = () => {
         base: 8,
         md: 3
       }} columnGap={10} py={4} px={4} style={{
-        
+
         bottom: 0,
         right: 0
-      }} position={{md: 'absolute'}}>
+      }} position={{ md: 'absolute' }}>
         <Link
           href="https://evoverses.com/whitepaper"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+          style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
         >🧾 Whitepaper</Link>
         <Link
           href="https://evoverses.com/medium"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+          style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
         >📰 Medium</Link>
         <Link
           href="https://evoverses.com/telegram"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+          style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
         >😎 Telegram Group</Link>
         <Link
           href="https://evoverses.com/twitter"
           _hover={{ textDecoration: 'none' }} color={'white'} className='textShadow'
           target={'_blank'}
-          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+          style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
         >🗣 Twitter</Link>
         <Link
           href="https://traderjoexyz.com/trade?outputCurrency=0x42006Ab57701251B580bDFc24778C43c9ff589A1#/"
           _hover={{ textDecoration: 'none' }} className='textShadow'
           target={'_blank'}
-          
-          style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+
+          style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
         >
           <Button
             variant={'solid'}
@@ -183,7 +183,7 @@ const Home: React.VoidFunctionComponent = () => {
             borderRadius={20}
             px={5}
             color="white"
-            style={{cursor:'url("https://evoverses.com/cursor_link.png"), pointer'}}
+            style={{ cursor: 'url("https://evoverses.com/cursor_link.png"), pointer' }}
             onClick={() => {
               ReactGA.event({
                 category: 'conversion',
